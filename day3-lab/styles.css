@@ -91,3 +91,31 @@ footer {
     color: rgb(211, 218, 240);
 }
 
+/* Gallery - page 4 */
+main .photo {
+    max-width: 500px;
+}
+
+main #album .photo img{
+    width: 500px;
+    height: 350px;
+}
+
+main figcaption {
+    max-width: 400px;
+    text-align: center;
+    background-color: #fff;
+}
+
+main .description {
+    visibility: hidden;
+    position: relative;
+    left: 100px;
+    bottom: 200px;
+    background-color: rgb(255, 255, 255, 0.5);
+    padding: 20px;
+    max-width: fit-content;
+}
+main .photo:hover .description{
+    visibility: visible;
+}
