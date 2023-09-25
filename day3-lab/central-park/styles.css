@@ -146,3 +146,17 @@ main .photo:hover .description{
     padding-bottom: 10px;
     
 }
+
+/* Gallery */
+main .description {
+    visibility: hidden;
+    position: relative;
+    left: 100px;
+    bottom: 200px;
+    background-color: rgb(255, 255, 255, 0.5);
+    padding: 20px;
+    max-width: fit-content;
+}
+.image-container #photo:hover .description{
+    visibility: visible;
+}
