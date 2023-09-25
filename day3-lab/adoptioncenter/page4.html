@@ -27,27 +27,12 @@
     <main>
         <h1>Photo Gallery</h1>
         <p>Please check out our puppies that have been adopted!</p>  
+        <div class="image-container">
         <ul id="album">
-            <!-- <li class="photo">
-                <img src="images/puppy1.jpg">
-                <figcaption>test 1</figcaption>
-                <div class="description"> test desc 1 </div>
-            </li>
-            <li class="photo">
-                <img src="images/puppy2.jpg">
-                <figcaption>test 2</figcaption>
-                <div class="description"> test desc 2 </div>
-            </li>
-           
-            <li class="photo"><img src="images/puppy3.jpg"></li>
-            <li class="photo"><img src="images/puppy4.jpg"></li> -->
+        
         </ul>
-
-        <!-- Information Box -->
-        <div class="info-box">
-            This is additional information about the puppy.
-            <span class="close-button" onclick="closeDescription(this)">X</span>
         </div>
+
     </main>
 
 </div>
@@ -75,28 +60,27 @@
         fileNames.push("puppy"+(i+1)); // create image filename and store in the array
         captionTexts.push("cute puppy "+ (i+1));
         descTexts.push("Look at this puppy " + (i+1));
-        photos.push("<img src='images/" + fileNames[i]+ ".jpg'>" + openCaptionTag + captionTexts[i] + closeCaptionTag + openDescTag + descTexts[i] + "<div class='info-box'>" + "information about puppy "+(i+1) + "<span class='close-button' onclick='closeDescription(this)'>Click This to Close</span></div>" + closeDescTag); // assembling the filename into a large element
+        photos.push("<img src='images/" + fileNames[i]+ ".jpg'>" 
+        + openCaptionTag + captionTexts[i] + closeCaptionTag + 
+        openDescTag + descTexts[i] + closeDescTag + 
+        "<div class='info-box'>" + "<h1>" + captionTexts[i] + "</h1>" + 
+            "information about puppy "+(i+1) +
+            "<span class='close-button' onclick='closeDescription(this)'>Click This to Close</span>" 
+            + "</div>"); // assembling the filename into a large element
         image = openList + photos[i] + closeList; // assemble image element from previous arrays
         imageList.push(image); //store the image element code into an array 
-
     }
-
-  
 
     //display all six images
     document.getElementById("album").innerHTML = imageList;
 
     // Function to toggle the visibility of the description box
-    function displayDesc(element){
-        var infoBox = element.querySelector('.info-box');
-        infoBox.style.display = (infoBox.style.display === 'block') ? 'none' : 'block';
-    }
-
-    // // Function to toggle the visibility of the description box
-    // function displayDesc(element) {
-    //     var infoBox = element.nextElementSibling; // Navigate to the next element (info-box)
-    //     infoBox.style.display = (infoBox.style.display === 'block') ? 'none' : 'block';
-    // }
+    function displayDesc(element) {
+        var infoBox = element.nextElementSibling; // Find the next sibling, which is the info-box
+        if (infoBox) {
+            infoBox.style.display = (infoBox.style.display === 'block') ? 'none' : 'block';
+        }
+}
 
     // Function to close the description box
     function closeDescription(element) {

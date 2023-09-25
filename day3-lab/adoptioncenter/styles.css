@@ -147,13 +147,27 @@ main img {
 }
 
 /* Gallery */
+.image-container {
+    display: grid;
+    grid-gap: 2em;
+    grid-template-columns: repeat(2, 1fr);
+    /* grid-template-rows: repeat(5, 250px); */
+    grid-template-rows: repeat(auto-fill, minmax(250px, 1fr));  /* automatically adjust rows */
+    justify-content: center;
+    height: 80%;
+}
 main .photo {
     max-width: 400px;
 }
 
+main #album {
+    list-style-type: none;
+}
+
 main #album .photo img{
-    width: 400px;
-    height: 250px;
+    width: 100%;
+    height: 80%;
+    object-fit: cover;
 }
 
 main figcaption {
@@ -177,13 +191,32 @@ main .photo:hover .description{
 
 main .info-box {
     display: none;
-    position: absolute;
-    background-color: #fff;
+    position: fixed;
+    background-color: #c9f5e8;
     padding: 10px;
-    border: 1px solid #ccc;
     z-index: 1;
+    top: 50%;
+    bottom: 50%;
+    transform: translate(100%, -50%);
+    width: 300px;
+    height: 200px;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid black;
+    box-shadow: 10px 10px 5px #888888;
 }
 
+main .info-box h1 {
+    font-size: 20px;
+}
+
+main .info-box span {
+    display: inline-block;
+    color: black;
+    margin-top: 2rem;
+    width: 100%;
+    text-align: center;
+}
 
 /* contact */
 .signupinfo{
@@ -260,3 +293,12 @@ form .button input[type=submit]{
     width: 100px;
     height: 35px;
 }
+
+/* footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 20px;   /* Height of the footer */
+    background: #fff;
+ }
