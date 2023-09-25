@@ -22,14 +22,16 @@
     <main>
         <h1>My First Heading</h1>
         <p>This is my first paragraph information</p>  
-        <ul id="album">
-            <!-- <li id="photo"><img src="images/winterland1.jpg"></li>
-            <li id="photo"><img src="images/winterland2.jpg"></li>
-            <li id="photo"><img src="images/winterland3.jpg"></li>
-            <li id="photo"><img src="images/winterland4.jpg"></li>
-            <li id="photo"><img src="images/winterland5.jpg"></li>
-            <li id="photo"><img src="images/winterland6.jpg"></li> -->
-        </ul>
+        <div>
+            <ul id="album" class="image-container">
+                <!-- <li id="photo"><img src="images/winterland1.jpg"></li>
+                <li id="photo"><img src="images/winterland2.jpg"></li>
+                <li id="photo"><img src="images/winterland3.jpg"></li>
+                <li id="photo"><img src="images/winterland4.jpg"></li>
+                <li id="photo"><img src="images/winterland5.jpg"></li>
+                <li id="photo"><img src="images/winterland6.jpg"></li> -->
+            </ul>
+        </div>
     </main>
 <!-- Footer -->
     <footer>&copy; Copyright 2023</footer>
@@ -56,8 +58,9 @@
 
     // shorter version of the code below without displaying the comma
     var image = [];
+    var caption_names = ["BEAUTIFUL WINTER", "SNOW LAND", "WINTERY ROAD", "WINTER IN THE COUNTRY"]; // container to store caption names
     for (var i = 0; i < 4; i++){
-        image = `<li id="photo"><img src="images/winterland${i + 1}.jpg"><li>`;
+        image = `<li id="photo"><figure><img src="images/winterland${i + 1}.jpg"><figcaption>${caption_names[i]}</figcaption></figure><li>`;
         document.getElementById('album').innerHTML += image;
     }
 
